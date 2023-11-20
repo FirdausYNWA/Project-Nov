@@ -55,6 +55,7 @@ body.dark {
   -moz-transition: var(--tran-05);
   -ms-transition: var(--tran-05);
   -o-transition: var(--tran-05);
+  z-index: 100;
 }
 
 .sidebar.close {
@@ -83,6 +84,7 @@ body.dark {
   min-width: 60px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .sidebar li {
@@ -112,6 +114,9 @@ body.dark {
   -o-transition: var(--tran-02);
 }
 
+.sidebar .menu {
+  margin-top: 15px;
+}
 .sidebar header {
   position: relative;
 }
@@ -181,12 +186,7 @@ header .image-text .header-text {
 }
 
 body.dark .sidebar header .toggle {
-  transform: rotate(180deg);
   color: var(--text-color);
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
 }
 
 .sidebar .search-box {
@@ -197,9 +197,12 @@ body.dark .sidebar header .toggle {
 .search-box input {
   height: 100%;
   width: 100%;
+  font-size: 16px;
+  font-weight: 500;
   outline: none;
   border: none;
   border-radius: 6px;
+  color: var(--text-color);
   background: var(--primary-color-light);
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -267,16 +270,21 @@ body.dark .sidebar li a:hover .text {
 }
 .menu-bar .mode i {
   position: absolute;
+  transition: var(--tran-03);
+  -webkit-transition: var(--tran-03);
+  -moz-transition: var(--tran-03);
+  -ms-transition: var(--tran-03);
+  -o-transition: var(--tran-03);
 }
 
-.menu-bar .mode i .sun {
+.menu-bar .mode i.sun {
   opacity: 0;
 }
 
-body.dark .menu-bar .mode i .sun {
-  opacity: 0;
+body.dark .menu-bar .mode i.sun {
+  opacity: 1;
 }
-body.dark .menu-bar .mode i .moon {
+body.dark .menu-bar .mode i.moon {
   opacity: 0;
 }
 .menu-bar .mode .toggle-switch {
@@ -335,4 +343,28 @@ body.dark .menu-bar .mode i .moon {
 
 body.dark .switch::before {
   left: 24px;
+}
+
+.home {
+  position: relative;
+  left: 250px;
+  height: 100vh;
+  width: calc(100% - 250px);
+  background: var(--body-color);
+  transition: var(--tran-05);
+  -webkit-transition: var(--tran-05);
+  -moz-transition: var(--tran-05);
+  -ms-transition: var(--tran-05);
+  -o-transition: var(--tran-05);
+}
+.home .text {
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--text-color);
+  padding: 8px 40px;
+}
+
+.sidebar.close ~ .home {
+  left: 88px;
+  width: calc(100% - 88px);
 }
