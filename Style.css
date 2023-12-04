@@ -10,12 +10,13 @@
 
 :root {
   /* colors */
-  --body-color: #e4e9f7;
-  --sidebar-color: #fff;
-  --primary-color: #695cfe;
-  --primary-color-light: #f6f5ff;
-  --toggle-color: #ddd;
-  --text-color: #707070;
+  --body-color: #18191a;
+  --sidebar-color: #242526;
+  --primary-color: #4d4e50;
+  --primary-color-light: #3a3b3c;
+  --toggle-color: #1c1a1a;
+  --text-color: #ccc;
+  --dark-mode:#ffffff;
 
   /*  transition */
   --tran-02: all 0.2s ease;
@@ -34,12 +35,13 @@ body {
 }
 
 body.dark {
-  --body-color: #18191a;
-  --sidebar-color: #242526;
-  --primary-color: #3a3b3c;
-  --primary-color-light: #3a3b3c;
-  --toggle-color: #fff;
-  --text-color: #ccc;
+  --body-color: #e4e9f7;
+  --sidebar-color: #fff;
+  --primary-color: #8c8cd3;
+  --primary-color-light: #f6f5ff;
+  --toggle-color: #494545;
+  --text-color: #707070;
+  --dark-mode:#fcfcfa;
 }
 /* ====sidebar==== */
 .sidebar {
@@ -47,7 +49,8 @@ body.dark {
   top: 0;
   left: 0;
   height: 100%;
-  width: 250px;
+  /* kc------------------------- */
+  width: 88px ;
   padding: 10px 14px;
   background: var(--sidebar-color);
   transition: var(--tran-05);
@@ -59,7 +62,7 @@ body.dark {
 }
 
 .sidebar.close {
-  width: 88px;
+  width: 300px;
 }
 
 /* ====resuable css==== */
@@ -73,11 +76,11 @@ body.dark {
   -ms-transition: var(--tran-04);
   -o-transition: var(--tran-04);
   white-space: nowrap;
-  opacity: 1;
+  opacity: 0;
 }
 
 .sidebar.close .text {
-  opacity: 0;
+  opacity: 1;
 }
 
 .sidebar .image {
@@ -140,13 +143,17 @@ header .image-text .header-text {
 }
 
 .header-text .name {
+  margin-left: 10px;
   font-weight: 600;
+  font-size: 20px;
 }
 
-.header-text .profession {
+/* .header-text .profession {
+  margin-left: 20px;
   margin-top: -2px;
-}
+} */
 
+/* toogle untuk sidebar panah kecil */
 .sidebar header .toggle {
   position: absolute;
   top: 50%;
@@ -157,7 +164,7 @@ header .image-text .header-text {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--sidebar-color);
+  color:#fff;
   font-size: 22px;
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
@@ -186,7 +193,7 @@ header .image-text .header-text {
 }
 
 body.dark .sidebar header .toggle {
-  color: var(--text-color);
+  color: black;
 }
 
 .sidebar .search-box {
@@ -237,12 +244,12 @@ body.dark .sidebar header .toggle {
 
 .sidebar li a:hover .icon,
 .sidebar li a:hover .text {
-  color: var(--sidebar-color);
+  color: var(--dark-mode);
 }
 
 body.dark .sidebar li a:hover .icon,
 body.dark .sidebar li a:hover .text {
-  color: var(--text-color);
+  color: var(--primary-color-light);
 }
 
 .sidebar .menu-bar {
@@ -256,10 +263,10 @@ body.dark .sidebar li a:hover .text {
   position: relative;
   border-radius: 6px;
   background: var(--primary-color-light);
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -o-border-radius: 6px;
+  -webkit-border-radius:;
+  -moz-border-radius:;
+  -ms-border-radius:;
+  -o-border-radius:;
 }
 
 .menu-bar .mode .moon-sun {
@@ -289,7 +296,7 @@ body.dark .menu-bar .mode i.moon {
 }
 .menu-bar .mode .toggle-switch {
   position: absolute;
-  right: -8px;
+  right: 5px;
   display: flex;
   align-items: center;
   justify-items: center;
@@ -325,7 +332,7 @@ body.dark .menu-bar .mode i.moon {
   left: 5px;
   transform: translateY(-50%);
   border-radius: 50%;
-  background: var(--sidebar-color);
+  background: var(--dark-mode);
   transition: var(--tran-03);
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -347,7 +354,7 @@ body.dark .switch::before {
 
 .home {
   position: relative;
-  left: 250px;
+  left: 88px;
   height: 100vh;
   width: calc(100% - 250px);
   background: var(--body-color);
@@ -365,6 +372,18 @@ body.dark .switch::before {
 }
 
 .sidebar.close ~ .home {
-  left: 88px;
+  left: 250px;
   width: calc(100% - 88px);
 }
+
+/* 999999999999 9999999999999999999999999999999 6666666666666666666666666666*/
+
+.sidebar .menu-bar li .sub-menu {
+  position: absolute;
+  left: 100%;
+  /*---*/top: 80px;
+  margin-top: 0;
+  background: wheat;
+  color: #ccc;
+}
+
